@@ -8,7 +8,7 @@ import ir.alitayyeb.ir.alitayyeb.Repository
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class GitHubApiHandler() {
+class GitHubApiHandler {
     private val cachedUsers = HashMap<String, GithubUser>()
 
     private val gson: Gson = GsonBuilder().setPrettyPrinting().create()

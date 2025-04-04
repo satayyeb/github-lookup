@@ -16,11 +16,15 @@ fun main() {
                     println("Missing search keyword")
                     continue
                 }
-                val user = handler.getUser(tokens[1])
-                if (user != null)
-                    handler.printUser(user)
-                else
-                    println("No user found with name ${tokens[1]}")
+                try {
+                    val user = handler.getUser(tokens[1])
+                    if (user != null)
+                        handler.printUser(user)
+                    else
+                        println("No user found with name ${tokens[1]}")
+                } catch (e: Exception) {
+                    println("Error: ${e.message}")
+                }
             }
 
             "cache" -> {
